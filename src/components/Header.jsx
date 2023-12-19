@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// @ts-ignore
 import logo from "../assets/color_logo.png";
 
 function Header() {
