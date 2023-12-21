@@ -1,9 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import homePicture from "../assets/home_picture.jpg";
-import aboutPicture from "../assets/about_picture.jpg";
+import styles from "./Banner.module.scss";
+import homePicture from "../../assets/home_picture.jpg";
+import aboutPicture from "../../assets/about_picture.jpg";
 
-const bannerImages = {
+const bannerConfig = {
   "/": {
     image: homePicture,
     text: "Chez vous, partout et ailleurs",
@@ -16,14 +17,16 @@ const bannerImages = {
 
 function Banner() {
   const location = useLocation();
-  const currentPath = location.pathname;
-  const bannerContent = bannerImages[currentPath] || bannerImages["/"];
+  const { image, text } = bannerConfig[location.pathname] || bannerConfig["/"];
+
   return (
     <section
-      className={`banner ${currentPath === "/" ? "" : "heigthAboutBanner"}`}
+      className={`${styles.banner} ${
+        location.pathname === "/" ? "" : styles.heightAboutBanner
+      }`}
     >
-      <img src={bannerContent.image} alt="Bannière" />
-      {currentPath === "/" && <h1>{bannerContent.text}</h1>}
+      <img src={image} alt="Bannière" />
+      {text && <h1>{text}</h1>}
     </section>
   );
 }
