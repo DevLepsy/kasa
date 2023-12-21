@@ -1,38 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// @ts-ignore
-import logo from "../assets/color_logo.png";
+import logo from "../../assets/color_logo.png";
+import styles from "./Header.module.scss";
 
-function Header() {
+export default function Header() {
   return (
-    <header className="header">
-      <img src={logo} alt="Kasa Logo" className="header-logo" />
-      <nav>
-        <ul className="nav-list">
-          <li className="nav-item">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              Accueil
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/a-propos"
-              className={({ isActive }) =>
-                isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              A propos
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav className={styles.nav}>
+      <img src={logo} alt="Logo Kasa" />
+      <ul>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Accueil
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/a-propos"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            A Propos
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
-
-export default Header;
