@@ -1,13 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
-import Home from "../pages/home/Home";
-import About from "../pages/about/About";
-import Housing from "../pages/housing/Housing";
-import Error from "../pages/error/Error";
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Error from "../pages/Error";
+import Accomodation from "../pages/Accomodation";
 
 function AppRouter() {
   return (
@@ -16,7 +14,7 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<About />} />
-        <Route path="/fiche-logement/:id" element={<Housing />} />
+        <Route path="/fiche-logement/:id" element={<Accomodation />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
