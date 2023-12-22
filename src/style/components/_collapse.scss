@@ -3,25 +3,85 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px 10px 5px 15px;
     border-radius: 5px;
     position: relative;
     z-index: 1;
     cursor: pointer;
-    font-size: 24px;
-    font-weight: 500;
-    color: white;
-    background-color: $color-secondary;
   }
+
   & .collapseContent {
     color: $color-secondary;
-    background-color: $color-tertiary;
-    margin: -5px 0;
+    background-color: #f6f6f6;
+    margin: -5px auto 0 auto;
     max-width: 1240px;
     border-radius: 0 0 5px 5px;
     animation: loadContent 600ms both;
   }
   & .collapseContent.open {
     padding: 35px 30px 15px 15px;
+  }
+}
+
+.accommodationCollapse {
+  .collapse {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+  & .collapseContent {
+    color: $color-secondary;
+    background-color: #f6f6f6;
+    margin: -5px auto 0 auto;
+    border-radius: 0 0 5px 5px;
+    animation: loadContent 400ms both;
+  }
+  & .collapseContent.open {
+    padding: 35px 30px 15px 15px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .aboutCollapse {
+    & .collapse {
+      font-size: 13px;
+      padding: 0 10px;
+      border-radius: 7px;
+    }
+    & .collapseContent {
+      & p {
+        font-size: 12px;
+      }
+    }
+    & .collapseContent.open {
+      padding-top: 20px;
+    }
+  }
+  .accommodationCollapse {
+    & .collapse {
+      font-size: 13px;
+      padding: 0 10px;
+    }
+    & .collapseContent {
+      & p {
+        font-size: 12px;
+      }
+    }
   }
 }
