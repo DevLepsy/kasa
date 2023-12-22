@@ -1,4 +1,12 @@
-@use "./base/reset";
-@use "./base/typography";
-@use "./utils/variables";
-@use "./utils/mixins";
+@import "./base/reset";
+@import "./base/typography";
+@import "./utils/variables";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./components/banner";
+@import "./components/card";
+@import "./components/carrousel";
+@import "./components/collapse";
+@import "./pages/error";
+@import "./pages/about";
+@import "./utils/mixins";
