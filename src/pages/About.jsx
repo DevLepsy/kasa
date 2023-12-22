@@ -31,9 +31,9 @@ function About() {
     <div>
       <Banner />
       <div className="aboutCollapse">
-        {collapseData.map((collapse, index) => (
+        {collapseData.map((collapse) => (
           <Collapse
-            key={index}
+            key={collapse.title}
             title={collapse.title}
             content={collapse.content}
           />
@@ -42,5 +42,4 @@ function About() {
     </div>
   );
 }
-
 export default About;
