@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 // @ts-ignore
-import arrow_down from "../assets/arrow_down.png";
-// @ts-ignore
 import arrow_up from "../assets/arrow_up.png";
+// @ts-ignore
+import arrow_down from "../assets/arrow_down.png";
 
 export default function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Collapse({ title, content }) {
   };
 
   return (
-    <div className="collapseContainer">
+    <div>
       <div
         onClick={handleToggleCollapse}
         className={`collapse ${isOpen ? "open" : ""}`}
@@ -25,7 +25,10 @@ export default function Collapse({ title, content }) {
         />
       </div>
       {isOpen && (
-        <div ref={contentRef} className="collapsibleContent">
+        <div
+          ref={contentRef}
+          className={`collapseContent ${isOpen ? "open" : ""}`}
+        >
           <ul>{content}</ul>
         </div>
       )}
