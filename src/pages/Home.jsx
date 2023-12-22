@@ -10,7 +10,10 @@ function Home() {
 
   return (
     <div>
-      <Banner location={location} />
+      <Banner
+        // @ts-ignore
+        location={location}
+      />
       <section className="cardsContainer">
         {data.map((location, index) => (
           <Card location={location} key={index} />
