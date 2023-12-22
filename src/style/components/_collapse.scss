@@ -1,0 +1,27 @@
+.aboutCollapse {
+  & .collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 15px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    background-color: $color-secondary;
+  }
+  & .collapseContent {
+    color: $color-secondary;
+    background-color: $color-tertiary;
+    margin: -5px 0;
+    max-width: 1240px;
+    border-radius: 0 0 5px 5px;
+    animation: loadContent 600ms both;
+  }
+  & .collapseContent.open {
+    padding: 35px 30px 15px 15px;
+  }
+}
