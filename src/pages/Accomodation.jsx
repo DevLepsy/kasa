@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Collapse from "../components/Collapse";
-import data from "../data/data.json";
-import color_star from "../assets/color_star.png";
-import gray_star from "../assets/gray_star.png";
 import Carrousel from "../components/Carrousel";
+import data from "../data/data.json";
+// @ts-ignore
+import color_star from "../assets/color_star.png";
+// @ts-ignore
+import gray_star from "../assets/gray_star.png";
+import Collapse from "../components/Collapse";
 
-function Accomodation() {
+export default function Accommodation() {
   const params = useParams();
   const id = params.id;
   const navigate = useNavigate();
@@ -16,18 +18,18 @@ function Accomodation() {
     if (!selectedItem) {
       navigate("*");
     }
-  }, [navigate, selectedItem]);
+  }, [selectedItem, navigate]);
 
   if (selectedItem) {
     const {
       pictures,
       title,
-      description,
-      host,
-      rating,
       location,
-      equipments,
+      host,
       tags,
+      rating,
+      description,
+      equipments,
     } = selectedItem;
 
     const ratingNumber = parseInt(rating);
@@ -40,8 +42,8 @@ function Accomodation() {
     ));
 
     return (
-      <section className="accomodationContent">
-        <Carrousel imageList={pictures} />
+      <section className="accommodationContent">
+        <Carrousel imagesList={pictures} />
 
         <div className="accomodationDetails">
           <div className="propertyInfo">
@@ -63,9 +65,20 @@ function Accomodation() {
             <div>{stars}</div>
           </div>
         </div>
+        <div className="accommodationCollapse">
+          <Collapse title="Description" content={description} />
+          <Collapse
+            title="Équipements"
+            content={
+              <ul>
+                {equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            }
+          />
+        </div>
       </section>
     );
   }
 }
-
-export default Accomodation;
