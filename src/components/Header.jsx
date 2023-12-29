@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// @ts-ignore
 import color_logo from "../assets/color_logo.png"; // Assure-toi que le chemin vers tes images est correct.
 
 export default function Header() {
