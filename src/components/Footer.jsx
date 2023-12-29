@@ -1,5 +1,6 @@
 import React from "react";
 
+// @ts-ignore
 import white_logo from "../assets/white_logo.png";
 
 function Footer() {
