@@ -9,30 +9,31 @@ function Carrousel({ imagesList }) {
   const currentImage = imagesList[currentIndex];
 
   const slideLeft = () => {
-    setCurrentIndex(
-      currentIndex === 0 ? imagesList.length - 1 : currentIndex - 1
-    );
+    const nextIndex =
+      currentIndex === 0 ? imagesList.length - 1 : currentIndex - 1;
+    setCurrentIndex(nextIndex);
   };
 
   const slideRight = () => {
-    setCurrentIndex(
-      currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1
-    );
+    const nextIndex =
+      currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(nextIndex);
   };
 
   return (
     <div className="descriptionAccommodation">
       <img src={currentImage} alt="Logement" className="imageAccommodation" />
-      {imagesList.length === 1 ? null : (
+      {imagesList.length > 1 && (
         <div>
-          <img onClick={() => slideLeft()} src={leftArrow} alt="Précédente" />
+          <img onClick={slideLeft} src={leftArrow} alt="Précédente" />
           <p>
             {currentIndex + 1}/{imagesList.length}
           </p>
-          <img onClick={() => slideRight()} src={rightArrow} alt="Suivante" />
+          <img onClick={slideRight} src={rightArrow} alt="Suivante" />
         </div>
       )}
     </div>
   );
 }
+
 export default Carrousel;
