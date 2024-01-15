@@ -1,9 +1,9 @@
 import React from "react";
 
+// @ts-ignore
 import homePicture from "../assets/home_picture.jpg";
+// @ts-ignore
 import aboutPicture from "../assets/about_picture.jpg";
-
-// Supposition que le fichier SCSS global est déjà importé ailleurs dans l'application.
 
 const bannerConfig = {
   "/": {
